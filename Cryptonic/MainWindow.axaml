@@ -12,7 +12,11 @@
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="*" MinWidth="100"/>
         </Grid.ColumnDefinitions>
-
+<!-- Splitter -->
+<GridSplitter Grid.Column="1" 
+              Background="#FFCCCCCC" 
+              HorizontalAlignment="Stretch" 
+              VerticalAlignment="Stretch"/>
         <!-- Left Pane -->
         <Border Grid.Column="0" Background="#FFF0F0F0" Padding="15">
             <TextBlock Text="Left Pane" 
