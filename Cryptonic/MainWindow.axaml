@@ -12,25 +12,6 @@
         <RowDefinition Height="*"/>  <!-- For the existing content -->
     </Grid.RowDefinitions>
 
-    <!-- New panel for the TextBox and Label -->
-    <Grid Name="MainGrid" ColumnDefinitions="Auto,Auto, 8*" Margin="10">
-
-        <Button Width="35" Height="35" Content="&lt;" FontSize="20"
-         HorizontalContentAlignment="Center"
-         Padding="-0.5"
-         VerticalContentAlignment = "Center"
-         FontFamily="{StaticResource FiraCodeNerdFont}" 
-         Grid.Column="0"/>
-        <Button Width="35" Height="35" Content="&gt;" FontSize="20"
-         HorizontalContentAlignment="Center"
-         Padding="-0.5"
-         VerticalContentAlignment = "Center"
-         FontFamily="{StaticResource FiraCodeNerdFont}" 
-         Grid.Column="1"/>
-           <TextBox Name="NavPathTB"  Grid.Column="2">
-            </TextBox>
-           </Grid>
-
     <!-- Original Grid with SplitterGrid -->
     <Grid Grid.Row="1" ColumnDefinitions="250,4,*">
         <Border x:Name="NavPane"
