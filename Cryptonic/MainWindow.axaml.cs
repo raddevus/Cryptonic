@@ -1,4 +1,6 @@
 using Avalonia.Controls;
+using AppHelpers;
+using Cryptonic.Models;
 
 namespace Cryptonic;
 
