@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Cryptonic.Tests/Cryptonic.Tests.csproj" />
+  <Project Path="Cryptonic/Cryptonic.csproj" />
+</Solution>
