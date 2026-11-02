@@ -7,34 +7,54 @@
         xmlns:local="clr-namespace:Cryptonic.Models"
 
         Title="Cryptonic">
+
+
 <Grid>
-    <!-- Define rows for the grid -->
+   <Grid.RowDefinitions>
+      <RowDefinition Height="*"/> <!-- For the panel -->
+      <RowDefinition Height="Auto"/>  <!-- For the existing content -->
+   </Grid.RowDefinitions>
+        <!-- Define two columns with a splitter column in between -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" MinWidth="100"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*" MinWidth="100"/>
+        </Grid.ColumnDefinitions>
 
-    <!-- Original Grid with SplitterGrid -->
-    <Grid ColumnDefinitions="500,4,*">
-      <Label Target="PwdGridLabel" Grid.Row="0" Grid.Column="0">Draw a pattern</Label>
-            <local:PwdGrid Name="PwdGrid" Width="250" Height="250" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4"/>
-         <StackPanel Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
-              <CheckBox Name="HidePatternCheckBox" Click="SetHidePattern">Hide Pattern</CheckBox>
-              <Button Click="ClearHandler">Clear</Button>
-         </StackPanel>
-            <TextBox Text="{Binding #PwdGrid.GeneratedPassword}" Name="PwdTextBox" Grid.Row="12" Grid.Column="0" Height="100" AcceptsReturn="True" TextWrapping="Wrap"
+        <!-- Left Pane -->
+        <Border Grid.Column="0" Background="DarkGreen" Padding="15">
+        <StackPanel Orientation="Vertical">
+            <Label Target="PwdGridLabel" Grid.Row="0" Grid.Column="0" >Draw a pattern</Label>
+            <local:PwdGrid Name="PwdGrid" Grid.Row="0" Grid.Column="0" Width="250" Height="250" />
+            <StackPanel Orientation="Horizontal">
+            <CheckBox Name="HidePatternCheckBox" Click="SetHidePattern" Grid.Row="0" Grid.Column="0" >Hide Pattern</CheckBox>
+            <Button Click="ClearHandler" Grid.Row="0" Grid.Column="0">Clear</Button>
+            </StackPanel>
+             <TextBox Text="{Binding #PwdGrid.GeneratedPassword}" Name="PwdTextBox"  Height="100" AcceptsReturn="True" TextWrapping="Wrap"
             TextChanged="PasswordTextChanged"/>
-
-        <Border x:Name="NavPane"
-                Grid.Column="0"
-                >
-               
+            </StackPanel>
         </Border>
 
+        <!-- Right Pane -->
+        <Border Grid.Column="1" Grid.ColumnSpan="2" Background="White" Padding="15"> <!-- Wait, use Column 2 for right pane -->
+        </Border>
+
+                <!-- Splitter -->
         <GridSplitter Grid.Column="1" Name="MainSplitter"
                       Width="4"
                       Background="Gray"
                       ResizeDirection="Columns"
                       ResizeBehavior="PreviousAndNext"
                       Cursor="SizeWestEast"/>
-    </Grid>
-</Grid>
 
+        
+        <!-- Right Pane (Corrected) -->
+        <Border Grid.Column="2" Background="White" Padding="15">
+            <TextBlock Text="Right Pane" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       Foreground="Black"/>
+        </Border>
+    </Grid>
 
 </Window>

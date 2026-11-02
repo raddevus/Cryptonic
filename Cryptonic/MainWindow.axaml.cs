@@ -15,7 +15,7 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-        public void SetHidePattern(object? sender, RoutedEventArgs e){
+    public void SetHidePattern(object? sender, RoutedEventArgs e){
       Console.WriteLine("Setting Hide Pattern bool");
       PwdGrid.IsPatternHidden = (sender as CheckBox)?.IsChecked ?? false;
       System.Console.WriteLine($"isPatternHidden: {PwdGrid.IsPatternHidden}");
